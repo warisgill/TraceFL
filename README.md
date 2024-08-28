@@ -2,6 +2,8 @@
 For questions or feedback, please contact at [waris@vt.edu](mailto:waris@vt.edu). The `code` is written in [Flower FL Framework](https://flower.ai/), the most widely used FL framework.
 # 1. TraceFL
 TraceFL is a `tool` designed to provide **interpretability** in Federated Learning (FL) by identifying clients responsible for specific predictions made by a global model.  [Paper Link](https://arxiv.org/pdf/2312.13632)
+
+![alt text](image.png)
 ### 1.1 Overview
 Federated Learning (FL) enables multiple clients (e.g., `hospitals` ) to collaboratively train a global model without sharing their raw data. However, this distributed and privacy-preserving setup makes it challenging to attribute a model's predictions to specific clients. Understanding which clients are most responsible for a model's output is crucial for `debugging`, `accountability`, and `incentivizing` high-quality contributions.
 
