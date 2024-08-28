@@ -1,0 +1,13 @@
+# _target_: hydra.sweeper.basic.BasicSweeper
+_target_: hydra._internal.core_plugins.basic_sweeper.BasicSweeper
+
+max_batch_size: null
+params:
+    model.name: openai-community/openai-gpt, google-bert/bert-base-cased
+    dataset.name: dbpedia_14, yahoo_answers_topics
+    num_clients: ${shared_sweeper_params.num_clients}
+    num_rounds: 25
+    exp_key: ${shared_sweeper_params.exp_key}
+    clients_per_round: ${shared_sweeper_params.clients_per_round}
+    dirichlet_alpha: 0.1
+    # dirichlet_alpha: 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1

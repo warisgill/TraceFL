@@ -1,0 +1,71 @@
+defaults:
+    - constants
+    - _self_
+
+exp_key: "Temp-" # This is the test key. It will be changed after running the exp
+num_clients: 10 
+clients_per_round: 10
+num_rounds: 10
+dirichlet_alpha: None # non-iid
+batch_size: 32 # client batch size
+# for differential privacy
+noise_multiplier: -1
+clipping_norm: -1
+
+total_gpus: 1
+total_cpus: 12
+client_cpus: 1
+client_gpu: 0.1
+device: "cuda"
+
+client:
+    epochs: 2
+    lr: 0.001
+
+model:
+    name: densenet121 #google-bert/bert-base-cased  #microsoft/MiniLM-L12-H384-uncased #Intel/dynamic_tinybert #google-bert/bert-base-cased #resnet18
+    arch: ${model_arch.${model.name}}
+
+dataset:
+    name: 'pathmnist' # organamnist
+    num_classes: ${dataset_classes.${dataset.name}}
+    channels: ${dataset_channels.${dataset.name}}
+
+strategy:
+    name: fedavg # points to your strategy (either custom or exiting in Flower)
+    num_rounds: ${num_rounds}
+    clients_per_round: ${clients_per_round}
+    noise_multiplier: ${noise_multiplier}
+    clipping_norm: ${clipping_norm}
+
+data_dist:
+    dist_type: non_iid_dirichlet #PathologicalPartitioner-3 # non_iid_dirichlet
+    num_clients: ${num_clients}
+    batch_size: ${batch_size}
+    dirichlet_alpha: ${dirichlet_alpha}
+    dname: ${dataset.name}
+    mname: ${model.name}
+    storage_dir: ${storage.dir}
+    max_per_client_data_size: 2048
+    max_server_data_size: 2048
+
+
+
+do_training: False
+do_provenance: False
+plotting: False
+do_full_cache_provenance: False
+dry_run: False
+convert_cache_to_csv: False
+
+
+    
+hydra:
+    job_logging:
+        root:
+            level: INFO # Set the job logging level to INFO
+        loggers:
+            flwr:
+                level: INFO
+            accelerate.utils.other:
+                level: ERROR
