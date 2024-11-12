@@ -71,14 +71,12 @@ Each experiment's output will be logged in the `logs` directory, providing detai
 ## 4. Citation
 Latex
 ```
-@misc{gill2024traceflachievinginterpretabilityfederated,
-      title={TraceFL: Achieving Interpretability in Federated Learning via Neuron Provenance}, 
-      author={Waris Gill and Ali Anwar and Muhammad Ali Gulzar},
-      year={2024},
-      eprint={2312.13632},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2312.13632}, 
+@inproceedings{gill2025tracefl,
+  title = {{TraceFL: Interpretability-Driven Debugging in Federated Learning via Neuron Provenance}},
+  author = {Gill, Waris and Anwar, Ali and Gulzar, Muhammad Ali},
+  booktitle = {2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)},
+  year = {2025},
+  organization = {IEEE},
 }
 ```
 
