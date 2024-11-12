@@ -1,6 +1,6 @@
 # TraceFL: Interpretability-Driven Debugging in Federated Learning via Neuron Provenance
 
-> **Accepted at 2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)** [Arxiv Paper Link](https://arxiv.org/pdf/2312.13632)
+> **Accepted at 2025 IEEE/ACM 47th International Conference on Software Engineering (ICSE)** [[Arxiv Paper Link](https://arxiv.org/pdf/2312.13632)]
 
 For questions or feedback, please contact at [waris@vt.edu](mailto:waris@vt.edu). The `code` is written in [Flower FL Framework](https://flower.ai/), the most widely used FL framework.
 # 1. TraceFL
